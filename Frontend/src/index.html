@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+ * Copyright (c) 2022 All Rights Reserved
+ * Title: Trading Visualized
+ * Authors: Scott Zastrow, Nichole Davidson, Alexander Bennett, Tanner Stahara, Zachary Chalmers
+//-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trading Visualized</title>
+    <meta name="author" content="Jiffy Labs Inc.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><!--Sets mobile resolution-->
+    <script src="https://code.jscharting.com/latest/jscharting.js"></script>
+    <script type="text/javascript" src="stockpage.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/menu.css">
+    <link rel="stylesheet" type="text/css" href="css/content.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body >
+
+    <header class="header">
+         <div class="companyname">
+             <a href="index.html"><img src="./css/images/logo-no-background.png" height="40" /></a>
+         </div>
+        <div id="menuwrap">
+
+        </div><!--menuwrap-->
+    </header>
+    <div class="contentbody">
+        <div class="content">
+            <div class="divider"></div>
+            <div class="overflowcontent">
+                <!--content area-->
+                <div style="margin: 20px; height:600px">
+                    <div align="center">
+                        <form id="form">
+                            <label class="label"> Enter your Phone Number: </label>
+                            <input name="phoneNumber" style="margin-left: 5px;" type="text" value="" size="30" id="phoneNumber"/>
+                            <br><br>
+                            <label class="label"> Enter your location: </label>
+                            <input name="location" style="margin-left: 5px;" type="text" value="" size="30" id="location"/>
+                            <br><br>
+                            <label class="label"> Enter your phone carrier: </label>
+                            <select name="subject" id="carrier">
+                                <option value="att">AT&T</option>
+                                <option value="verizon">Verizon</option>
+                                <option value="tmobile">T-mobile</option>
+                                <option value="sprint">Sprint</option>
+                            </select></br></br>
+                            <button class="button" type="submit">Submit</button>
+                            <br><br>
+                        </form>
+                    </div>
+                    <table id="table">
+
+                    </table>
+                    <div id="stockresults"></div>
+                    <button id="sendWeather" type ="submit" >SEND</button>
+                </div>
+                <form id="deleteUser">
+                    <label class="label"> Enter phoneNumber to delete from text Thread</label>
+                    <input name="deleteNumber" style="margin-left: 5px;" type="text" value="" size="30" id="deleteNumber"/>
+                    <button class="button" type="submit">Delete Number</button>
+                </form>
+            </div>
+        </div>
+    </div>
+<footer class="footer">
+    <div class="divider"></div>
+
+</footer>
+<div class="remainder"></div>
+</body>
+</html>
