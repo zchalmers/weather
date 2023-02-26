@@ -44,6 +44,25 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
+processResources {
+	expand(project.properties)
+}
+task buildZip(type: Zip) {
+	from compileJava
+	from processResources
+	into('lib') {
+		from configurations.runtimeClasspath
+	}
+}
+
+task copyFrontend(type: Copy) {
+	dependsOn(":Frontend:yarn_build")
+
+	from("../Frontend/dist")
+	into("build/resources/main/static")
+}
+
+compileJava.dependsOn(copyFrontend)
 tasks.named('test') {
 	useJUnitPlatform()
 }
